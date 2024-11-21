@@ -2,7 +2,8 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', DishListAPIView.as_view(), name='dish-list'),
+    path('', RunMigrationsView.as_view(), name='run-migrations'),
+    path('dishes/', DishListAPIView.as_view(), name='dish-list'),
     path('dishes/create/', DishCreateAPIView.as_view(), name='dish-create'),
     path('dishes/<int:pk>/', DishRetrieveUpdateAPIView.as_view(), name='dish-detail'),
     path('dishes/<int:pk>/delete/', DishDestroyAPIView.as_view(), name='dish-delete'),
